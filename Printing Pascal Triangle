@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <math.h>
+
+long Fact(int);
+
+int main()
+{
+int i, Num, j;
+
+printf("\n No. of Rows \n");
+scanf("%d", &Num);
+
+for (i = 0; i < Num; i++)
+{
+for (j = 0; j <= (Num - i - 2); j++)
+{
+   printf(" ");
+   }
+
+for (j = 0; j <= i; j++)
+{
+   printf("%ld ", Fact(i) / (Fact(j) * Fact(i-j)));
+   }
+
+printf("\n");
+}
+
+return 0;
+}
+
+long Fact(int Num)
+{
+int i;
+long Fact = 1;
+
+for (i = 1; i <= Num; i++)
+Fact = Fact * i;
+
+return Fact;
+}
